@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-//import "./Register.css";
+import "./css/Register.css";
 
 const initialState = {
     firstname: "",
@@ -31,7 +31,7 @@ const Register = props => {
     };
 
     return (
-        <div>
+        <div className="Register">
             <h1>essentialism</h1>
             <h2>Create a New Account</h2>
             <form>

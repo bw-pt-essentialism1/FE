@@ -4,11 +4,12 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import { NavLink, Route } from "react-router-dom";
 
+
 function App() {
   return (
     <div className="App">
       <Route exact path="/" component={Login} />
-      <Route exact path="/" component={Register} />
+      <Route exact path="/register" component={Register} />
     </div>
   );
 }
