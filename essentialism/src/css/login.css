@@ -1,0 +1,39 @@
+.input {
+  width: 45%;
+  padding: 15px;
+}
+
+.loginh1 {
+  font-size: 2.4rem;
+  padding-top: 3%;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+.activate-button {
+  color: black;
+  border: 2px solid black;
+  padding: 2%;
+  width: 30%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  background: lightgray;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.login-button {
+  padding: 2%;
+  width: 30%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  background: lightgray;
+  border: 2px solid darkgray;
+  color: darkgray;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}

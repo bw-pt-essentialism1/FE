@@ -1,7 +1,7 @@
-import React, { useState } from "react"
-import styled from "styled-components"
-import "./css/login.css";
-
+import React, { useState, useEffect } from "react"
+import { useHistory } from "react-router-dom"
+import "../css/login.css";
+import { LoginDiv, Plinks, RegisterLink, Inputs } from "../styles"
 
 
 function Login() {
@@ -9,7 +9,8 @@ function Login() {
         email: "",
         password: ""
     })
-
+    const History = useHistory()
+    const button = document.getElementById("login-button")
 
     function handleChange(e) {
         setValues({
@@ -20,50 +21,47 @@ function Login() {
 
     function handleSubmit(e) {
         e.preventDefault()
+        setValues({
+            email: "",
+            password: ""
+        })
+        History.push("/onboarding")
+        disabled = true
+        button.classList.add("login-button")
+    }
+
+    function RouteToRegister() {
+        History.push("/register")
+    }
+
+    let disabled = true
+    if (values.email && values.password) {
+        button.classList.remove("login-button")
+        button.classList.add("activate-button")
+        disabled = false
     }
 
     return (
         <LoginDiv>
-            <h1 class="loginh1">Essentialism</h1>
+            <h1 className="loginh1">Essentialism</h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <Inputs>
                     <h5>E-Mail Address</h5>
-                    <input class="input" type="text" placeholder="input your email.." name="email" onChange={handleChange} value={values.email} />
-                </div>
-                <div>
+                    <input className="input" type="text" placeholder="input your email.." name="email" onChange={handleChange} value={values.email} />
+                </Inputs>
+                <Inputs>
                     <h5>Password</h5>
-                    <input class="input" type="password" placeholder="input your password..." name="password" onChange={handleChange} value={values.password} />
-                </div>
+                    <input className="input" type="password" placeholder="input your password..." name="password" onChange={handleChange} value={values.password} />
+                </Inputs>
                 <RegisterLink>
-                    <p>New user?</p>
-                    <p>Forgot password?</p>
+                    <Plinks onClick={RouteToRegister}>New user?</Plinks>
+                    <Plinks>Forgot password?</Plinks>
                 </RegisterLink>
-                <Button type="submit">Sign In</Button>
+                <button disabled={disabled} className="login-button" id="login-button" type="submit">Sign In</button>
             </form>
         </LoginDiv>
     )
 }
-
-const LoginDiv = styled.section`
-    background: gray;
-    width: 70%;
-    margin: 0 auto;
-`
-
-const RegisterLink = styled.div`
-    background: blue;
-    display:flex;
-    justify-content: space-evenly;
-    margin:0 auto;
-    width: 60%;
-
-`
-
-const Button = styled.button`
-   padding: 1%;
-
-`
-
 
 
 

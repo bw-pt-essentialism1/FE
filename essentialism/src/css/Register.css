@@ -1,0 +1,54 @@
+body {
+  background-color: #c4c4c4;
+  margin-top: 3%;
+}
+
+.Register {
+  display: flex;
+  flex-direction: column;
+}
+
+.Register h1 {
+  font-size: 1.8em;
+}
+
+.Register h2 {
+  font-size: 1.2em;
+}
+
+.Register form {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.Register form input {
+  width: 280px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid black;
+}
+
+.register-button {
+  color: darkgray;
+  border: 2px solid darkgray;
+  padding: 7% 9%;
+  width: 50%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background-color: #c4c4c4;
+}
+
+.activates-button {
+  color: black;
+  border: 2px solid black;
+  padding: 7% 9%;
+  width: 50%;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
