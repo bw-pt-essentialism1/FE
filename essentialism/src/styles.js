@@ -2,9 +2,12 @@ import styled from "styled-components"
 
 
 export const LoginDiv = styled.section`
-    width: 70%;
+    // width: 70%;
     margin: 0 auto;
+    background: #c4c4c4;
+
 `
+
 
 export const RegisterLink = styled.div`
     display:flex;
@@ -60,4 +63,22 @@ export const TextBox = styled.textarea`
   display:block;
   margin:0 auto;
   margin-bottom:3%;
+`
+
+export const NewProject = styled.button`
+  padding: .4% 4%;
+  background: white;
+  border:2px solid black;
+  display:block;
+  margin:0 auto;
+  font-size:1.4rem;
+  border-radius:50px;
+`
+
+export const WhiteSpace = styled.div`
+  background:white;
+`
+
+export const H4 = styled.h4`
+  font-size:1.5rem;
 `

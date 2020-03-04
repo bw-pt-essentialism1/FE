@@ -30,10 +30,6 @@ function Login() {
         button.classList.add("login-button")
     }
 
-    function RouteToRegister() {
-        History.push("/register")
-    }
-
     let disabled = true
     if (values.email && values.password) {
         button.classList.remove("login-button")
@@ -54,7 +50,7 @@ function Login() {
                     <input className="input" type="password" placeholder="input your password..." name="password" onChange={handleChange} value={values.password} />
                 </Inputs>
                 <RegisterLink>
-                    <Plinks onClick={RouteToRegister}>New user?</Plinks>
+                    <Plinks onClick={() => History.push("/register")}>New user?</Plinks>
                     <Plinks>Forgot password?</Plinks>
                 </RegisterLink>
                 <button disabled={disabled} className="login-button" id="login-button" type="submit">Sign In</button>

@@ -8,6 +8,9 @@ import Values from './components/Values';
 import PickThree from './components/PickThree';
 import PickValues from "./components/PickValues"
 import ExplainValues from "./components/ExplainValues"
+import ListValues from './components/ListValues';
+import ProjectList from './components/ProjectList';
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +21,8 @@ function App() {
       <Route exact path="/pick-three" component={PickThree} />
       <Route exact path="/pick-values" component={PickValues} />
       <Route exact path="/explain-values" component={ExplainValues} />
+      <Route exact path="/list-values" component={ListValues} />
+      <Route exact path="/project-list" component={ProjectList} />
 
     </div>
   );
