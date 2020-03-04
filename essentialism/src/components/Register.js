@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import "../css/Register.css";
 
 const initialState = {
     name: "",
     email: "",
     phone: "",
-    password: ""
+    password: "",
+    username: ""
 };
 
 const Register = props => {
@@ -19,11 +19,10 @@ const Register = props => {
     };
 
     let disabled = true
-    if (data.email && data.phone && data.name && data.password) {
+    if (data.email && data.phone && data.name && data.password && data.username) {
         button.classList.remove("register-button")
         button.classList.add("activates-button")
         disabled = false
-        console.log("lsdf")
     }
 
     const handleSubmit = event => {
@@ -58,6 +57,14 @@ const Register = props => {
                     name="phone"
                     placeholder="Enter phone number"
                     value={data.phone}
+                    onChange={handleChange}
+                />
+                <label>Username</label>
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter Username"
+                    value={data.username}
                     onChange={handleChange}
                 />
                 <label>E-Mail Address</label>

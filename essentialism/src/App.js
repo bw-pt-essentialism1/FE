@@ -10,6 +10,9 @@ import PickValues from "./components/PickValues"
 import ExplainValues from "./components/ExplainValues"
 import ListValues from './components/ListValues';
 import ProjectList from './components/ProjectList';
+import AddedProjects from './components/AddedProjects';
+import ProjectValues from './components/ProjectValues';
+import Home from './dashboard/Home';
 
 function App() {
   return (
@@ -23,7 +26,9 @@ function App() {
       <Route exact path="/explain-values" component={ExplainValues} />
       <Route exact path="/list-values" component={ListValues} />
       <Route exact path="/project-list" component={ProjectList} />
-
+      <Route exact path="/added-projects" component={AddedProjects} />
+      <Route exact path="/project-values" component={ProjectValues} />
+      <Route exact path="/home" component={Home} />
     </div>
   );
 }

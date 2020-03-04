@@ -36,7 +36,7 @@ export const Plinks = styled.p`
     cursor: pointer;
 `
 export const P = styled.p`
-  font-size: 1.4rem;
+  font-size: 2rem;
 `
 
 export const H1 = styled.h1`
@@ -82,3 +82,14 @@ export const WhiteSpace = styled.div`
 export const H4 = styled.h4`
   font-size:1.5rem;
 `
+
+export const Settings = styled.img`
+  width:4%;
+`
+export const Seperate = styled.div`
+  display:flex;
+  width:80%;
+  justify-content: space-around;
+  margin: 0 auto;
+`
+
