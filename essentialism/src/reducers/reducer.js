@@ -1,12 +1,16 @@
 import { USER_LOGIN_START, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE } from "../components/Login"
 import { USER_REGISTER_START, USER_REGISTER_SUCCESS, USER_REGISTER_FAILURE } from "../components/Register"
 import { GET_VALUES_START, GET_VALUES_SUCCESS, GET_VALUES_FAILURE } from "../components/Values"
+import { POST_VALUES_START, POST_VALUES_SUCCESS, POST_VALUES_FAILURE } from "../components/Values"
+import { POST_FAVORITE_VALUES_START, POST_FAVORITE_VALUES_SUCCESS, POST_FAVORITE_VALUES_FAILURE } from "../components/PickValues"
 
 const initialState = {
   isLoading: false,
   isLoggedIn: false,
   error: "",
-  message: ""
+  message: "",
+  user_id: null,
+  token: null
 }
 
 export const reducer = (state = initialState, action) => {
@@ -22,7 +26,9 @@ export const reducer = (state = initialState, action) => {
         isLoading: false,
         isLoggedIn: true,
         error: "",
-        message: action.payload
+        message: action.payload,
+        user_id: action.user_id,
+        token: action.token
       }
     case USER_LOGIN_FAILURE:
       return {
@@ -63,6 +69,40 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         error: "error getting values."
+      }
+    case POST_VALUES_START:
+      return {
+        ...state,
+        isLoading: true
+      }
+    case POST_VALUES_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        error: "",
+      }
+    case POST_VALUES_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: "error adding value."
+      }
+    case POST_FAVORITE_VALUES_START:
+      return {
+        ...state,
+        isLoading: true
+      }
+    case POST_FAVORITE_VALUES_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        error: "",
+      }
+    case POST_FAVORITE_VALUES_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: "error adding favorite value."
       }
     default: return state
   }

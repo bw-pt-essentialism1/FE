@@ -1,8 +1,8 @@
 import React from "react"
-import gear from "../imgs/gear.png"
-import home from "../imgs/home-run.png"
+// import gear from "../imgs/gear.png"
+// import home from "../imgs/home-run.png"
 import moon from "../imgs/moon.png"
-import pencil from "../imgs/pencil.png"
+// import pencil from "../imgs/pencil.png"
 import settings from "../imgs/settings.png"
 
 import { Settings, Seperate } from "../styles"
