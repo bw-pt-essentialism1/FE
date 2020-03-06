@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import "../css/login.css";
 import { LoginDiv, Plinks, RegisterLink, Inputs } from "../styles"
@@ -33,11 +33,12 @@ function Login() {
             disabled = true
             button.classList.add("login-button")
             localStorage.setItem("token", data.token)
+            localStorage.setItem("user_id", data.id)
             setValues({
                 username: "",
                 password: ""
             })
-            dispatch({ type: USER_LOGIN_SUCCESS, payload: data.message })
+            dispatch({ type: USER_LOGIN_SUCCESS, payload: data.message, user_id: data.id, token: data.token })
         }
         catch (err) {
             console.log(err)
