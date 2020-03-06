@@ -1,6 +1,10 @@
 import React from "react"
 import { TextBox, OnboardingButton } from "../styles"
+import { useHistory } from "react-router-dom"
+
+
 function ExplainValues() {
+  const History = useHistory()
 
   return (
     <div>
@@ -9,7 +13,7 @@ function ExplainValues() {
       <p>Focus on your thoughts and feelings</p>
       <p>Don't worry about spelling, grammar, or how well-written it is.</p>
       <TextBox cols="65" rows="19" type=" text-box"></TextBox>
-      <OnboardingButton>I've Finished writing</OnboardingButton>
+      <OnboardingButton onClick={() => History.push("/list-values")}>I've Finished writing</OnboardingButton>
     </div>
   )
 }
